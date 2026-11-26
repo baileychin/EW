@@ -30,6 +30,16 @@
     width: 90px;
     height: 90px;
 }
+.animal-donation {
+    width: 160px;
+    height: 100px;
+    margin-left: 20px;
+}
+.animal-share {
+    width: 90px;
+    height: 90px;
+    margin-left: 20px;
+}
 
 .animal-count {
     font-size: 20px;
