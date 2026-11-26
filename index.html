@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EW (Endangered Wildlife)</title>
-    <link rel="stylesheet" href="nav-bar.css">
-    <link rel="stylesheet" href="style.css">
+    <script>
+        document.documentElement.dataset.theme =
+            localStorage.getItem("ew-theme") === "dark" ? "dark" : "light";
+    </script>
+    <link rel="stylesheet" href="./nav-bar.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <!-- NAV-BAR START -->
@@ -32,46 +36,36 @@
         </div>
     </nav>
     <!-- NAV-BAR END -->
-    <!-- HomePAGE START -->
+
 <!-- continents
      https://commons.wikimedia.org/wiki/File:ContinentAfrica.svg
      -->
-<main style="text-align: center; padding: 32px 16px;">
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-        <a href="about:blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/ContinentAfrica.svg" alt="Africa"
-                 style="width: clamp(65px, 21vw, 360px); height: clamp(90px, 33vh, 320px); object-fit: contain;">
+<main class="home-main">
+    <div class="continent-map" aria-label="Explore endangered wildlife by continent">
+        <a class="continent-map__item continent-map__item--north-america" href="">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/ContinentNorthAmerica.svg" alt="North America">
         </a>
-        <a href="about:blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/ContinentNorthAmerica.svg" alt="North America"
-                 style="width: clamp(65px, 21vw, 360px); height: clamp(90px, 33vh, 320px); object-fit: contain;">
+        <a class="continent-map__item continent-map__item--south-america" href="">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/ContinentSouthAmerica.svg" alt="South America">
         </a>
-        <a href="about:blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/ContinentEurope.svg" alt="Europe"
-                 style="width: clamp(65px, 21vw, 360px); height: clamp(90px, 33vh, 320px); object-fit: contain;">
+        <a class="continent-map__item continent-map__item--africa" href="">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/ContinentAfrica.svg" alt="Africa">
         </a>
-        <a href="about:blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/ContinentSouthAmerica.svg" alt="South America"
-                 style="width: clamp(65px, 21vw, 360px); height: clamp(90px, 33vh, 320px); object-fit: contain;">
+        <a class="continent-map__item continent-map__item--asia" href="pages\Asia.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/ContinentAsia.svg" alt="Asia">
         </a>
-    </div>
-
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
-        <a href="about:blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/ContinentAsia.svg" alt="Asia"
-                 style="width: clamp(65px, 21vw, 360px); height: clamp(90px, 33vh, 320px); object-fit: contain;">
+        <a class="continent-map__item continent-map__item--europe" href="pages\Europe.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/ContinentEurope.svg" alt="Europe">
         </a>
-        <a href="about:blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/ContinentAustralia.svg" alt="Australia"
-                 style="width: clamp(65px, 21vw, 360px); height: clamp(90px, 33vh, 320px); object-fit: contain;">
+        <a class="continent-map__item continent-map__item--australia" href="pages\Australia.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/ContinentAustralia.svg" alt="Australia">
         </a>
-        <a href="about:blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/ContinentAntarctica.svg" alt="Antarctica"
-                 style="width: clamp(65px, 21vw, 360px); height: clamp(90px, 33vh, 320px); object-fit: contain;">
+        <a class="continent-map__item continent-map__item--antarctica" href="">
+            <img src="Antartica.svg" alt="Antarctica">
         </a>
     </div>
 
-    <p style="margin-top: 24px;">Click on a continent to explore its endangered wildlife.</p>
+    <p class="home-instructions">Click on a continent to explore its endangered wildlife.</p>
 </main>
 <!-- End Homepage -->
     <script src="script.js"></script>
