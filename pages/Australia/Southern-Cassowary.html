@@ -4,24 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EW (Endangered Wildlife)</title>
-    <link rel="stylesheet" href="nav-bar.css">
+    <link rel="stylesheet" href="../../nav-bar.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- NAV-BAR END -->
+    <!-- NAV-BAR START -->
     <nav class="navbar">
-        <div class="nav-bar-item" id="donate">
-            EW
+        <div class="nav-top">
+            <div class="nav-left">
+                <div class="nav-bar-item" id="logo">
+                    <a href="../../index.html">
+                        <span class="letters" name="E">E</span><span class="letters" name="W">W</span>
+                    </a>
+                </div>
+                <a class="donate-link" href="../../donate.html">Donate</a>
+            </div>
+            <details class="more-menu">
+                <summary>More</summary>
+                <div class="more-menu-panel" aria-hidden="true"></div>
+            </details>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                <span class="theme-toggle-icon" aria-hidden="true"></span>
+            </button>
         </div>
-        <div class="nav-bar-item" id="donate">
-            Donate
+        <div class="search">
+            <input type="search" placeholder="Search..." aria-label="Search">
         </div>
-        <div class="navbar-links">
-            <a href="#"></a>
-        </div>
-        </div>
-
     </nav>
+    <!-- NAV-BAR END -->
     <h1 style="font-size:60px;text-align: center;">Southern Cassowary</h1>
     <div style="display: flex; align-items: center; margin-left: 80px; margin-top: 40px; gap: 40px;">
     
@@ -32,7 +42,7 @@
     <div></div>
     <img src="https://cdn.iconscout.com/icon/free/png-256/free-heart-emoji-icon-svg-download-png-2465288.png?f=webp " alt="Heart" style="width:90px;height:90px; margin-left: 100px;">
     
-    <script src="script.js"></script>
+    <script src="../../script.js"></script>
     
 </body>
 </html>

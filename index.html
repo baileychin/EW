@@ -4,22 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EW (Endangered Wildlife)</title>
-    <link rel="stylesheet" href="nav-bar.css">
-    <link rel="stylesheet" href="style.css">
+    <script>
+        document.documentElement.dataset.theme =
+            localStorage.getItem("ew-theme") === "dark" ? "dark" : "light";
+    </script>
+    <link rel="stylesheet" href="./nav-bar.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- NAV-BAR END -->
+    <!-- NAV-BAR START -->
     <nav class="navbar">
-        <div class="logo">
-            EW
+        <div class="nav-top">
+            <div class="nav-left">
+                <div class="nav-bar-item" id="logo">
+                    <a href="index.html">
+                        <span class="letters" name="E">E</span><span class="letters" name="W">W</span>
+                    </a>
+                </div>
+                <a class="donate-link" href="donate.html">Donate</a>
+            </div>
+            <details class="more-menu">
+                <summary>More</summary>
+                <div class="more-menu-panel" aria-hidden="true"></div>
+            </details>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                <span class="theme-toggle-icon" aria-hidden="true"></span>
+            </button>
         </div>
-        <div class="navbar-links">
-            <a href="#"></a>
-        </div>
+        <div class="search">
+            <input type="search" placeholder="Search..." aria-label="Search">
         </div>
     </nav>
     <!-- NAV-BAR END -->
-    <!-- PAGE START -->
+
+<!-- continents
+     https://commons.wikimedia.org/wiki/File:ContinentAfrica.svg
+     -->
+<main class="home-main">
+    <div class="continent-map" aria-label="Explore endangered wildlife by continent">
+        <a class="continent-map__item continent-map__item--north-america" href="">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/ContinentNorthAmerica.svg" alt="North America">
+        </a>
+        <a class="continent-map__item continent-map__item--south-america" href="">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/ContinentSouthAmerica.svg" alt="South America">
+        </a>
+        <a class="continent-map__item continent-map__item--africa" href="">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/ContinentAfrica.svg" alt="Africa">
+        </a>
+        <a class="continent-map__item continent-map__item--asia" href="pages\Asia.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/ContinentAsia.svg" alt="Asia">
+        </a>
+        <a class="continent-map__item continent-map__item--europe" href="pages\Europe.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/ContinentEurope.svg" alt="Europe">
+        </a>
+        <a class="continent-map__item continent-map__item--australia" href="pages\Australia.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/ContinentAustralia.svg" alt="Australia">
+        </a>
+        <a class="continent-map__item continent-map__item--antarctica" href="">
+            <img src="Antartica.svg" alt="Antarctica">
+        </a>
+    </div>
+
+    <p class="home-instructions">Click on a continent to explore its endangered wildlife.</p>
+</main>
+<!-- End Homepage -->
     <script src="script.js"></script>
 </body>
 </html>
