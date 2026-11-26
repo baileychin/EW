@@ -1,0 +1,121 @@
+.home-main {
+    overflow-x: clip;
+    padding: 35% 16px;
+    text-align: center;
+}
+
+.continent-map {
+    position: relative;
+    overflow: clip;
+    width: min(100%, 1120px);
+    aspect-ratio: 1500 / 739;
+    margin: 0 auto;
+}
+
+.continent-map.is-antarctica-hovered {
+    cursor: pointer;
+}
+
+.continent-map__item {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.continent-map__item:hover,
+.continent-map__item--antarctica.is-hovered {
+    z-index: 1;
+    filter: brightness(1.12);
+    transform: scale(1.08);
+}
+
+.continent-map__item:focus-visible {
+    border-radius: 4px;
+    outline: 2px solid #347a2a;
+    outline-offset: 2px;
+}
+
+.continent-map__item img,
+.continent-map__item svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.continent-map__item img {
+    pointer-events: none;
+}
+
+.continent-map__item svg {
+    pointer-events: none;
+}
+
+.continent-map__item svg path,
+.continent-map__item svg rect,
+.continent-map__item svg circle,
+.continent-map__item svg ellipse,
+.continent-map__item svg polygon,
+.continent-map__item svg polyline,
+.continent-map__item svg line,
+.continent-map__item svg text,
+.continent-map__item svg use {
+    pointer-events: visiblePainted;
+}
+
+.continent-map__item--north-america {
+    left: 5%;
+    top: 2.25%;
+    width: 38%;
+    height: 46%;
+}
+
+.continent-map__item--south-america {
+    left: 18%;
+    top: 41.25%;
+    width: 18%;
+    height: 46%;
+}
+
+.continent-map__item--europe {
+    left: 40.8%;
+    top: 5.4%;
+    width: 17.9%;
+    height: 28.9%;
+}
+
+.continent-map__item--africa {
+    left: 42.5%;
+    top: 28%;
+    width: 22%;
+    height: 52%;
+}
+
+.continent-map__item--asia {
+    left: 52%;
+    top: 5%;
+    width: 42%;
+    height: 55%;
+}
+
+.continent-map__item--australia {
+    left: 80%;
+    top: 48%;
+    width: 22%;
+    height: 37%;
+}
+
+.continent-map__item--antarctica {
+    left: 19%;
+    top: 82%;
+    width: 72%;
+    height: 16%;
+    user-select: none;
+}
+
+.home-instructions {
+    margin-top: 24px;
+}
