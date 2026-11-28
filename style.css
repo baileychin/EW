@@ -119,3 +119,17 @@
 .home-instructions {
     margin-top: 24px;
 }
+
+.nav-top {
+    position: relative;
+}
+
+.leaderboard-link {
+    position: absolute;
+    left: 75%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}

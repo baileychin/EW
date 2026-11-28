@@ -22,8 +22,11 @@
                     </a>
                 </div>
                 <a class="donate-link" href="donate.html">Donate</a>
+                
             </div>
-            <details class="more-menu">
+           
+                <a class="leaderboard-link" href="leaderboard.html">Leaderboard</a>
+                <details class="more-menu">
                 <summary>More</summary>
                 <div class="more-menu-panel" aria-hidden="true"></div>
             </details>
@@ -72,58 +75,6 @@
 </body>
 </html>
 
-<!-- Leaderboard Start -->
 
-<div style="text-align: center; padding: 25px;">
-
-    <h1>Leaderboard</h1>
-    <h2>Animals with the most donations</h2>
-
-    <h2>1st Place</h2>
-    <div id="first"></div>
-
-    <h2>2nd Place</h2>
-    <div id="second"></div>
-
-    <h2>3rd Place</h2>
-    <div id="third"></div>
-
-</div>
-
-<script>
-    let animals = [
-        ["African Wild Dog", "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQppNT6nHbUUUZ4Ig4olJsopUr0x_s0B4ue5bmKr6o_84N4mZHt", "pages/Africa/African-Wild-Dog.html"],
-        ["Black Rhino", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Ly2SN9WreDIU7v7I9gsdrFMOfW9dVx2yMvosG_0_9w&s=10", "pages/Africa/Black-Rhino.html"],
-        ["Red Wolf", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2OCHRswsRpQUE2oF9iADHjhTSlqVEe9Vy-YgfEtJMFcDUEdNGTqkrvro&s=10", "pages/North-America/Red-Wolf.html"],
-        ["Black-Footed Ferret", "https://centerofthewest.org/cdn-cgi/image/width=1024,height=734,fit=crop,quality=60,scq=45,gravity=auto,sharpen=1,metadata=none,format=auto,onerror=redirect/wp-content/uploads/2017/09/Blackfooted-ferrets_NBFFCC.jpg", "pages/North-America/Black-Footed-Ferret.html"],
-        ["Numbat", "https://images.squarespace-cdn.com/content/v1/5308542ce4b0dd985a42b5ef/f0beae63-9b8e-4aec-a182-9f19e7daaee9/746452276_1431703038990897_2719597862558392191_n.jpg", "pages/Australia/Numbat.html"],
-        ["Southern Cassowary", "https://animals.sandiegozoo.org/sites/default/files/2017-12/cassowary-01.jpg", "pages/Australia/Southern-Cassowary.html"],
-        ["Emperor Penguin", "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iKIWgaiJUtss/v2/1200x900.jpg", "pages/Antartica/Emperor-Penguin.html"],
-        ["Blue Whale", "https://www.whalewatching.com/wp-content/uploads/2017/03/blue-whale.jpg", "pages/Antartica/Blue-Whale.html"],
-        ["Red Panda", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCqYcPPXKAmx1AUafJcJFQ3vJ9RQmG_9xH0vqAXEocBg&s=10", "pages/Asia/Red-Panda.html"],
-        ["Snow Leopard", "https://cdn.britannica.com/52/170952-050-A545E35D/carnivore-Snow-leopard-regions-subcontinent-Asia-Indian.jpg", "pages/Asia/Snow-Leopard.html"],
-        ["European Eel", "https://www.wwt.org.uk/uploads/images/2024-08-05/eel-2-717x403px.jpg", "pages/Europe/European-Eel.html"],
-        ["European Mink", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6Fe737voY_AgnHPg-aSzqC2bW9WUrCcAFZlAL4Mboi48q4FaaaunxubM&s=10", "pages/Europe/European-Mink.html"],
-        ["Galapagos Giant Tortoise", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtr3o1EcCre0jZDv6fOjvobgMcn9ljpiEQzuZBlz8xbvMLQA3WiFSZogZbE-AyhJmZMl3sdNvl9nWXAVkEAWhMDkve6pWsaxgKwV3fuA&s=10", "pages/South-America/Galapagos-Giant-Tortoise.html"],
-        ["Glaucous Macaw", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOVd_Y4ZMBUfUNmRCFg5E6SzZlKQPEjRtcjFGdHld2Qm367Td5vEFcD2iv8SiXBB_rXlEshc6NomJw8TFPeXdp7TlehMo8IskIJ1mjoFI&s=10", "pages/South-America/Glaucous-Macaw.html"]
-    ];
-
-    let places = ["first", "second", "third"];
-
-    for (let i = 0; i < 3; i++) {
-        let random = Math.floor(Math.random() * animals.length);
-        let animal = animals[random];
-
-        document.getElementById(places[i]).innerHTML =
-            '<h3>' + animal[0] + '</h3>' +
-            '<a href="' + animal[2] + '">' +
-            '<img src="' + animal[1] + '" width="250">' +
-            '</a>';
-
-        animals.splice(random, 1);
-    }
-</script>
-
-<!-- Leaderboard End -->
 
 </div>
