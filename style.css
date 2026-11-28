@@ -133,3 +133,13 @@
     text-decoration: none;
     font-size: 15px;
 }
+
+.ranking-link {
+    position: absolute;
+    left: 28%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
