@@ -6,6 +6,7 @@
     <title>EW (Endangered Wildlife)</title>
     <link rel="stylesheet" href="nav-bar.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="donate.css">
 </head>
 <body>
     <!-- NAV-BAR START -->
@@ -32,8 +33,43 @@
         </div>
     </nav>
     <!-- NAV-BAR END -->
-    <!-- PAGE START -->
+    <main class="donation-page">
+        <h1>Donate</h1>
+        <form class="donation-form">
+            <label class="visually-hidden" for="donation-recipient">Recipient</label>
+            <select id="donation-recipient" name="recipient" required>
+                <option value="" selected disabled>Select Animal</option>
+                <option value="general">General Wildlife Conservation</option>
+                <option value="african-wild-dog">African Wild Dog</option>
+                <option value="black-rhino">Black Rhino</option>
+                <option value="blue-whale">Blue Whale</option>  
+                <option value="emperor-penguin">Emperor Penguin</option>
+                <option value="red-panda">Red Panda</option>
+                <option value="snow-leopard">Snow Leopard</option>
+                <option value="numbat">Numbat</option>
+                <option value="southern-cassowary">Southern Cassowary</option>
+                <option value="european-eel">European Eel</option>
+                <option value="european-mink">European Mink</option>
+                <option value="black-footed-ferret">Black-Footed Ferret</option>
+                <option value="red-wolf">Red Wolf</option>
+                <option value="galapagos-giant-tortoise">Galapagos Giant Tortoise</option>
+                <option value="glaucous-macaw">Glaucous Macaw</option>
+            </select>
+
+            <label class="donation-amount" for="donation-amount">
+                <span>Amount: $</span>
+                <input id="donation-amount" name="amount" type="number" min="1" step="0.01" required>
+            </label>
+
+            <button class="donation-submit" type="submit">Donate!!</button>
+            <p class="donation-status" role="status" aria-live="polite"></p>
+                    <p class="donation-disclaimer">
+            Just a joke: donations do not actually go toward these animals or wildlife conservation.
+        </p>
+        </form>
+    </main>
 
     <script src="script.js"></script>
+    <script src="donate.js"></script>
 </body>
 </html>

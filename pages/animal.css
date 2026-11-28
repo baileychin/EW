@@ -66,6 +66,13 @@
     height: 100px;
     margin-left: 20px;
 }
+
+.animal-donation-link:focus-visible {
+    border-radius: 8px;
+    outline: 3px solid #347a2a;
+    outline-offset: 3px;
+}
+
 .animal-share {
     width: 90px;
     height: 90px;

@@ -1,6 +1,25 @@
 const randomAnimalCount = Math.floor(Math.random() * 8_000_000_000) + 1;
 const animalCountDisplay = document.querySelector("[data-random-count]");
 const animalLikeButton = document.querySelector("[data-animal-like]");
+const animalDonationImage = document.querySelector(".animal-donation");
+const animalHeading = document.querySelector("h1");
+
+if (animalDonationImage && animalHeading) {
+    const animalName = animalHeading.textContent.trim();
+    const recipient = animalName
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
+    const donationUrl = new URL("../../donate.html", window.location.href);
+    donationUrl.searchParams.set("recipient", recipient);
+
+    const donationLink = document.createElement("a");
+    donationLink.className = "animal-donation-link";
+    donationLink.href = donationUrl.href;
+    donationLink.setAttribute("aria-label", `Donate to ${animalName}`);
+    animalDonationImage.replaceWith(donationLink);
+    donationLink.append(animalDonationImage);
+}
 
 const formatAnimalCount = count => {
     if (count < 1_000) {
