@@ -1,6 +1,23 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.home-page .navbar {
+    flex: none;
+    height: auto;
+}
+
 .home-main {
+    display: grid;
+    flex: 1;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(min-content, 1fr) auto;
+    align-items: center;
     overflow-x: clip;
-    padding: 35% 16px;
+    min-height: 0;
+    padding: 16px;
     text-align: center;
 }
 
@@ -117,5 +134,5 @@
 }
 
 .home-instructions {
-    margin-top: 24px;
+    margin: 24px 16px 0;
 }
