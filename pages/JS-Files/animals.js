@@ -1,5 +1,6 @@
 const randomAnimalCount = Math.floor(Math.random() * 8_000_000_000) + 1;
 const animalCountDisplay = document.querySelector("[data-random-count]");
+const animalLikeButton = document.querySelector("[data-animal-like]");
 
 const formatAnimalCount = count => {
     if (count < 1_000) {
@@ -29,9 +30,77 @@ const formatAnimalCount = count => {
 };
 
 if (animalCountDisplay) {
-    animalCountDisplay.textContent = formatAnimalCount(randomAnimalCount);
-    animalCountDisplay.setAttribute(
-        "aria-label",
-        `${randomAnimalCount.toLocaleString()} random supporters`
-    );
+    const updateAnimalCount = liked => {
+        const count = randomAnimalCount + Number(liked);
+        animalCountDisplay.textContent = formatAnimalCount(count);
+        animalCountDisplay.setAttribute(
+            "aria-label",
+            `${count.toLocaleString()} supporters`
+        );
+    };
+
+    updateAnimalCount(false);
+
+    if (animalLikeButton) {
+        animalLikeButton.addEventListener("click", () => {
+            const liked = animalLikeButton.getAttribute("aria-pressed") !== "true";
+            animalLikeButton.setAttribute("aria-pressed", String(liked));
+            animalLikeButton.setAttribute(
+                "aria-label",
+                liked ? "Unlike this animal" : "Like this animal"
+            );
+            animalLikeButton.classList.toggle("is-liked", liked);
+            updateAnimalCount(liked);
+        });
+    }
+}
+
+const animalShareButtons = document.querySelectorAll(".animal-share-button");
+
+if (animalShareButtons.length > 0) {
+    const shareDialog = document.createElement("dialog");
+    shareDialog.className = "animal-share-dialog";
+    shareDialog.setAttribute("aria-labelledby", "animal-share-title");
+    shareDialog.innerHTML = `
+        <form method="dialog" class="animal-share-dialog__form">
+            <button class="animal-share-dialog__close" type="submit" aria-label="Close">×</button>
+        </form>
+        <h2 id="animal-share-title">Share this page</h2>
+        <label class="animal-share-dialog__label" for="animal-share-url">Page URL</label>
+        <div class="animal-share-dialog__controls">
+            <input id="animal-share-url" class="animal-share-dialog__url" type="text" readonly>
+            <button class="animal-share-dialog__copy" type="button">Copy</button>
+        </div>
+        <p class="animal-share-dialog__status" aria-live="polite"></p>
+    `;
+    document.body.append(shareDialog);
+
+    const shareUrlInput = shareDialog.querySelector(".animal-share-dialog__url");
+    const copyButton = shareDialog.querySelector(".animal-share-dialog__copy");
+    const shareStatus = shareDialog.querySelector(".animal-share-dialog__status");
+
+    animalShareButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            shareUrlInput.value = window.location.href;
+            shareStatus.textContent = "";
+            shareDialog.showModal();
+            copyButton.focus();
+        });
+    });
+
+    copyButton.addEventListener("click", async () => {
+        try {
+            if (!navigator.clipboard?.writeText) {
+                throw new Error("Clipboard access is unavailable.");
+            }
+
+            await navigator.clipboard.writeText(shareUrlInput.value);
+            shareStatus.textContent = "Link copied.";
+        } catch (error) {
+            console.error("Could not copy the page URL to the clipboard.", error);
+            shareUrlInput.focus();
+            shareUrlInput.select();
+            shareStatus.textContent = "Could not copy automatically. The URL is selected; copy it with Ctrl+C or Command+C.";
+        }
+    });
 }

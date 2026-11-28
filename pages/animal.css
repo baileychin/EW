@@ -30,6 +30,37 @@
     width: 90px;
     height: 90px;
 }
+
+.animal-heart-button {
+    display: inline-grid;
+    place-items: center;
+    width: 90px;
+    height: 90px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.animal-heart-button:hover {
+    transform: scale(1.08);
+}
+
+.animal-heart-button:focus-visible {
+    border-radius: 12px;
+    outline: 3px solid #347a2a;
+    outline-offset: 2px;
+}
+
+.animal-heart-button.is-liked .animal-heart {
+    filter: saturate(1.5) drop-shadow(0 0 5px #f66);
+}
+
+.animal-heart-button .animal-heart {
+    pointer-events: none;
+}
+
 .animal-donation {
     width: 160px;
     height: 100px;
@@ -39,6 +70,104 @@
     width: 90px;
     height: 90px;
     margin-left: 20px;
+}
+
+.animal-share-button {
+    display: inline-grid;
+    place-items: center;
+    width: 90px;
+    height: 90px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.animal-share-button:hover {
+    transform: scale(1.08);
+}
+
+.animal-share-button:focus-visible {
+    border-radius: 12px;
+    outline: 3px solid #347a2a;
+    outline-offset: 2px;
+}
+
+.animal-share-button .animal-share {
+    margin-left: 0;
+    pointer-events: none;
+}
+
+.animal-share-dialog {
+    width: min(420px, calc(100% - 32px));
+    margin: auto;
+    padding: 24px;
+    border: 0;
+    border-radius: 10px;
+    color: #222;
+    background: #fff;
+    box-shadow: 0 12px 36px #0004;
+}
+
+.animal-share-dialog::backdrop {
+    background: #0008;
+}
+
+.animal-share-dialog h2 {
+    margin: 0 36px 16px 0;
+    font-size: 22px;
+}
+
+.animal-share-dialog__form {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.animal-share-dialog__close {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: #eee;
+    color: #222;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.animal-share-dialog__label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.animal-share-dialog__controls {
+    display: flex;
+    gap: 8px;
+}
+
+.animal-share-dialog__url {
+    min-width: 0;
+    flex: 1;
+    padding: 9px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.animal-share-dialog__copy {
+    padding: 9px 14px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    background: #347a2a;
+    cursor: pointer;
+}
+
+.animal-share-dialog__status {
+    min-height: 1.25em;
+    margin: 10px 0 0;
+    font-size: 14px;
 }
 
 .animal-count {
